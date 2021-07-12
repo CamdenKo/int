@@ -1,24 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useState } from "react";
+import "./App.css";
+import { OptionValue } from "./types";
+
+import { OptionsList } from "./components";
+import { submitData } from "./utils";
 
 function App() {
+  const [minimumTransactionAmount, setMinimumTransactionAmount] = useState(500);
+  const [selectedOptions, setSelectedOptions] = useState<OptionValue[]>([]); // TODO
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Ramp</h1>
+      <h2>alerts</h2>
+      <div>
+        <p>Minimum Transaction Amount:</p>
+        $
+        <input
+          value={minimumTransactionAmount}
+          onChange={() => {
+            // TODO
+          }}
+        />
+      </div>
+      <div>
+        <p>Selected:</p>
+        TODO
+      </div>
+      <div>
+        <p>Selection Options:</p>
+        <OptionsList
+          selectedOptions={selectedOptions}
+          setSelectedOptions={setSelectedOptions}
+        />
+      </div>
+      <br />
+      <button
+        style={{ fontSize: "30px" }}
+        onClick={() => {
+          // TODO use submitData
+        }}
+      >
+        submit
+      </button>
     </div>
   );
 }
