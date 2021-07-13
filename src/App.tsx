@@ -39,7 +39,7 @@ function App() {
       <button
         style={{ fontSize: "30px" }}
         onClick={() => {
-          // TODO use submitData
+          submitData(); // TODO
         }}
       >
         submit
