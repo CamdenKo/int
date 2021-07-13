@@ -5,10 +5,13 @@ import { OptionValue } from "./types";
 
 import { OptionsList, SelectedOptionsList } from "./components";
 import { submitData } from "./utils";
+import { useListSelectOptions } from "./components/OptionsList/hooks";
 
 function App() {
   const [minimumTransactionAmount, setMinimumTransactionAmount] = useState(500);
   const [selectedOptions, setSelectedOptions] = useState<OptionValue[]>([]); // TODO
+
+  const options = useListSelectOptions();
 
   return (
     <div className="App">
@@ -31,7 +34,11 @@ function App() {
       <div>
         <p>Selection Options:</p>
         <OptionsList
-        // TODO
+          selectedOptions={selectedOptions}
+          options={options}
+          setSelectedOptions={() => {
+            console.log("todo");
+          }}
         />
       </div>
       <br />
