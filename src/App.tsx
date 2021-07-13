@@ -19,8 +19,8 @@ function App() {
         $
         <input
           value={minimumTransactionAmount}
-          onChange={() => {
-            console.log("TODO");
+          onChange={(e) => {
+            setMinimumTransactionAmount(Number(e.target.value));
           }}
         />
       </div>
@@ -30,9 +30,7 @@ function App() {
       </div>
       <div>
         <p>Selection Options:</p>
-        <OptionsList
-        // TODO
-        />
+        <OptionsList selectedOptions={selectedOptions} options={optio} />
       </div>
       <br />
       <button
