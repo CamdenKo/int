@@ -9,9 +9,12 @@ type Props = {
 };
 
 const Option: React.FC<Props> = ({ option, onClick, selected }) => (
-  <div>
-    <button onClick={onClick}>toggle</button>
-    {selected ? "✅" : "🚫"} {option.label}
+  <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <div>
+      <button onClick={onClick}>toggle</button>
+      {selected ? "✅" : "🚫"}
+    </div>
+    {option.label}
   </div>
 );
 
