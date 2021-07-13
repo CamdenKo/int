@@ -1,5 +1,4 @@
 import React from "react";
-import { useListSelectOptions } from "./hooks";
 import { Option } from "./components";
 import { OptionValue } from "../../types";
 
@@ -21,13 +20,27 @@ const OptionsList: React.FC<Props> = ({
         margin: "0 auto",
       }}
     >
-      {options.map((option) => (
-        <Option
-          option={option}
-          selected={selectedOptions.includes(option)}
-          onClick={() => console.log("todo")}
-        />
-      ))}
+      {options.map((option) => {
+        const isSelected = selectedOptions.includes(option);
+        console.log(isSelected, selectedOptions);
+        return (
+          <Option
+            option={option}
+            selected={selectedOptions.includes(option)}
+            onClick={() => {
+              if (!isSelected) {
+                setSelectedOptions([...selectedOptions, option]);
+              } else {
+                setSelectedOptions(
+                  selectedOptions.filter(
+                    (selectedOption) => selectedOption !== option
+                  )
+                );
+              }
+            }}
+          />
+        );
+      })}
     </div>
   );
 };

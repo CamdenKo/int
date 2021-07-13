@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./App.css";
-import { OptionValue } from "./types";
+import { AlertRuleType, OptionValue } from "./types";
 
 import { OptionsList, SelectedOptionsList } from "./components";
 import { submitData } from "./utils";
@@ -43,7 +43,27 @@ function App() {
       <button
         style={{ fontSize: "30px" }}
         onClick={() => {
-          submitData(); // TODO
+          submitData({
+            transaction_amount_threshold: minimumTransactionAmount,
+            alert_rules: selectedOptions.map(({ value: { id, type } }) => {
+              if (type === AlertRuleType.DEPARTMENT) {
+                return {
+                  type,
+                  department_id: id,
+                };
+              }
+              if (type === AlertRuleType.MERCHANT) {
+                return {
+                  type,
+                  merchant_id: id,
+                };
+              }
+              return {
+                type,
+                sk_category_id: id,
+              };
+            }),
+          });
         }}
       >
         submit
