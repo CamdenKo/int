@@ -9,7 +9,7 @@ import { useListSelectOptions } from "./components/OptionsList/hooks";
 
 function App() {
   const [minimumTransactionAmount, setMinimumTransactionAmount] = useState(500);
-  const [selectedOptions, setSelectedOptions] = useState<OptionValue[]>([]); // TODO
+  const [selectedOptions, setSelectedOptions] = useState<OptionValue[]>([]);
 
   const options = useListSelectOptions();
 
@@ -23,7 +23,7 @@ function App() {
         <input
           value={minimumTransactionAmount}
           onChange={() => {
-            console.log("TODO");
+            // TODO
           }}
         />
       </div>
@@ -36,9 +36,7 @@ function App() {
         <OptionsList
           selectedOptions={selectedOptions}
           options={options}
-          setSelectedOptions={() => {
-            console.log("todo");
-          }}
+          setSelectedOptions={setSelectedOptions}
         />
       </div>
       <br />
