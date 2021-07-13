@@ -32,3 +32,4 @@ Take a look at `designs/` to see how the finished website should look. Focus on 
 - `yarn install`
 - `yarn start`
 - Open `src/App.tsx`
+- Make the form functionality match the designs
