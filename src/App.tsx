@@ -43,7 +43,10 @@ function App() {
       <button
         style={{ fontSize: "30px" }}
         onClick={() => {
-          submitData(); // TODO
+          submitData({
+            transaction_amount_threshold: -1, // TODO
+            alert_rules: [], // TODO
+          });
         }}
       >
         submit
