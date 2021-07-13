@@ -28,6 +28,10 @@ In this scenario, imagine that the entire backend has been built out (in this ca
 
 While not _actually_ using the backend, to figure out the shape of the data you will have to look at how the endpoint expects information to be sent. Look at `/backend/public_api.py` to glean the information.
 
+## Designs
+
+Take a look at `designs/` to see how the finished website should look. Focus on functionality first!
+
 ## Let's Do This
 
 - `yarn install`
