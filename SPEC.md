@@ -22,18 +22,14 @@ A Ramp Alert has two components: `transaction_amount_threshold` and `alert_rules
 
 So for example, an alert could be created that sends an email if someone in the engineering department spends over $1,000 on travel.
 
-## Existing Code
-
-In this scenario, imagine that the entire backend has been built out (in this case we're not going to do any real API calls for simplicity). In addition, a fair number of components have already been created for you. Your focus will be on wiring everything together.
-
-While not _actually_ using the backend, to figure out the shape of the data you will have to look at how the endpoint expects information to be sent. Look at `/backend/public_api.py` to glean the information.
-
 ## Designs
 
 Take a look at `designs/` to see how the finished website should look. Focus on functionality first!
 
 ## Let's Do This
 
+- clone the repo
 - `yarn install`
 - `yarn start`
-- Open `App.tsx`
+- Open `src/App.tsx`
+- Make the form functionality match the designs
