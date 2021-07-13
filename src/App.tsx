@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import { OptionValue } from "./types";
 
-import { OptionsList } from "./components";
+import { OptionsList, SelectedOptionsList } from "./components";
 import { submitData } from "./utils";
 
 function App() {
@@ -20,19 +20,18 @@ function App() {
         <input
           value={minimumTransactionAmount}
           onChange={() => {
-            // TODO
+            console.log("TODO");
           }}
         />
       </div>
       <div>
         <p>Selected:</p>
-        TODO
+        <SelectedOptionsList selectedOptions={selectedOptions} />
       </div>
       <div>
         <p>Selection Options:</p>
         <OptionsList
-          selectedOptions={selectedOptions}
-          setSelectedOptions={setSelectedOptions}
+        // TODO
         />
       </div>
       <br />

@@ -4,6 +4,7 @@ import { Option } from "./components";
 import { OptionValue } from "../../types";
 
 type Props = {
+  options: OptionValue[];
   selectedOptions: OptionValue[];
   setSelectedOptions: (selectedOptions: OptionValue[]) => void;
 };
@@ -11,9 +12,8 @@ type Props = {
 const OptionsList: React.FC<Props> = ({
   selectedOptions,
   setSelectedOptions,
+  options,
 }) => {
-  const options = useListSelectOptions();
-
   return (
     <div
       style={{
