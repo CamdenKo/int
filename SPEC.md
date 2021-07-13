@@ -26,6 +26,8 @@ So for example, an alert could be created that sends an email if someone in the 
 
 In this scenario, imagine that the entire backend has been built out (in this case we're not going to do any real API calls for simplicity). In addition, a fair number of components have already been created for you. Your focus will be on wiring everything together.
 
+While not _actually_ using the backend, to figure out the shape of the data you will have to look at how the endpoint expects information to be sent. Look at `/backend/public_api.py` to glean the information.
+
 ## Let's Do This
 
 - `yarn install`

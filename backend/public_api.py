@@ -1,19 +1,18 @@
 from backend.schema import AlertDefinitionSchema
+import backend.services as alerts_services
 
 class AlertDefinitionsResource(Resource):
-    def post(self):
-        user = g.user
+    def post(self, request):
         alert_definition_request = AlertDefinitionSchema().load(data=request.get_json())
 
         try:
-            if _can_manage_business_alerts(user):
-                alert_definition = alerts_services.create_new_alert(
-                    user.business.id, alert_definition_request
-                )
-                db.session.commit()
-                return make_response(
-                    jsonify(AlertDefinitionSchema().dump(alert_definition)), 201
-                )
+            alert_definition = alerts_services.create_new_alert(
+                user.business.id, alert_definition_request
+            )
+            db.session.commit()
+            return make_response(
+                jsonify(AlertDefinitionSchema().dump(alert_definition)), 201
+            )
         except Exception:
             db.session.rollback()
             raise
