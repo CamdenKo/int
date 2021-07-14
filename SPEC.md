@@ -35,4 +35,4 @@ Take a look at `designs/` to see how the finished website should look. Focus on 
 - `yarn start`
 - Open `src/App.tsx`
 - Make the form functionality match the designs
-- Make sure the "submit" button works
+- Enable "submit" button (an example test for the "api" is in `backend/test.py`)
