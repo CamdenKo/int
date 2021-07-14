@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./App.css";
-import { OptionValue } from "./types";
+import { AlertRule, AlertRuleTypeToAlerRuleIdName, OptionValue } from "./types";
 
 import { OptionsList, SelectedOptionsList } from "./components";
 import { submitData } from "./utils";
@@ -22,8 +22,8 @@ function App() {
         $
         <input
           value={minimumTransactionAmount}
-          onChange={() => {
-            // TODO
+          onChange={(event) => {
+            setMinimumTransactionAmount(Number(event.target.value));
           }}
         />
       </div>
@@ -43,9 +43,14 @@ function App() {
       <button
         style={{ fontSize: "30px" }}
         onClick={() => {
+          const alertRules: AlertRule[] = selectedOptions.map((option) => ({
+            type: option.value.type,
+            [AlertRuleTypeToAlerRuleIdName[option.value.type]]: option.value.id,
+          }));
+
           submitData({
-            transaction_amount_threshold: -1, // TODO
-            alert_rules: [], // TODO
+            transaction_amount_threshold: minimumTransactionAmount,
+            alert_rules: alertRules, 
           });
         }}
       >

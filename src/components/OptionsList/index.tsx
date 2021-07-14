@@ -24,7 +24,14 @@ const OptionsList: React.FC<Props> = ({
         <Option
           option={option}
           selected={selectedOptions.includes(option)}
-          onClick={() => console.log("todo")}
+          onClick={() => {
+            if (selectedOptions.includes(option)) {
+              const filteredSelectionOptions = selectedOptions.filter(i => i !== option)
+              setSelectedOptions(filteredSelectionOptions)
+            } else {
+              setSelectedOptions([...selectedOptions, option])
+            }
+          }}
         />
       ))}
     </div>

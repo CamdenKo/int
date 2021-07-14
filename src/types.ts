@@ -4,6 +4,19 @@ export enum AlertRuleType {
   DEPARTMENT = "DEPARTMENT",
 }
 
+export const AlertRuleTypeDisplayText = {
+  [AlertRuleType.SK_CATEGORY]: "Category",
+  [AlertRuleType.MERCHANT]: "Merchant",
+  [AlertRuleType.DEPARTMENT]: "Department"
+}
+
+export const AlertRuleTypeToAlerRuleIdName = {
+  [AlertRuleType.SK_CATEGORY]: "sk_category_id",
+  [AlertRuleType.MERCHANT]: "merchant_id",
+  [AlertRuleType.DEPARTMENT]: "department_id"
+}
+
+
 export interface OptionValue {
   label: string;
   value: {
@@ -13,7 +26,7 @@ export interface OptionValue {
 }
 
 export interface AlertRule {
-  department_id?: string;
+  department_id?: number;
   department_name?: string;
   merchant_id?: number;
   merchant_name?: string;
