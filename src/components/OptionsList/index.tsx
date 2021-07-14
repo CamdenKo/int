@@ -21,23 +21,26 @@ const OptionsList: React.FC<Props> = ({
       }}
     >
       {options.map((option) => {
-        const isSelected = selectedOptions.includes(option);
-        console.log(isSelected, selectedOptions);
         return (
           <Option
             option={option}
             selected={selectedOptions.includes(option)}
-            onClick={() => {
-              if (!isSelected) {
-                setSelectedOptions([...selectedOptions, option]);
-              } else {
-                setSelectedOptions(
-                  selectedOptions.filter(
-                    (selectedOption) => selectedOption !== option
+            onClick={() =>
+              setSelectedOptions((currentSelectedOptions) => {
+                if (
+                  currentSelectedOptions.some(
+                    ({ value: { id, type } }) =>
+                      id === option.value.id && type === option.value.type
                   )
-                );
-              }
-            }}
+                ) {
+                  return currentSelectedOptions.filter(
+                    ({ value: { id, type } }) =>
+                      id !== option.value.id || type !== option.value.type
+                  );
+                }
+                return [...selectedOptions, option];
+              })
+            }
           />
         );
       })}
