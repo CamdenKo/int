@@ -23,7 +23,6 @@ export interface AlertRule {
 }
 
 export interface AlertsResource {
-  id?: number;
   alert_rules: AlertRule[];
   transaction_amount_threshold: number;
 }

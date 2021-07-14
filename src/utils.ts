@@ -14,6 +14,7 @@ const ruleValid = (rule: AlertRule) => {
 
 const alertValid = (alert: AlertsResource) => {
   if (Number.isNaN(alert.transaction_amount_threshold)) return false;
+  if (alert.transaction_amount_threshold <= 0) return false;
   if (alert.alert_rules.some((rule) => !ruleValid(rule))) return false;
 
   return true;

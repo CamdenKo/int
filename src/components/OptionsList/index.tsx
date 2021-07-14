@@ -5,7 +5,7 @@ import { OptionValue } from "../../types";
 type Props = {
   options: OptionValue[];
   selectedOptions: OptionValue[];
-  setSelectedOptions: (selectedOptions: OptionValue[]) => void;
+  setSelectedOptions: React.Dispatch<React.SetStateAction<OptionValue[]>>;
 };
 
 const OptionsList: React.FC<Props> = ({
