@@ -8,6 +8,8 @@ This is why we are now building Ramp Alerts (TM).
 
 With Ramp Alerts, finance teams can decide what types of transactions will automatically send an email to them.
 
+Your job is to create the frontend form for creating a single ramp alert.
+
 ## Structure
 
 A Ramp Alert has two components: `transaction_amount_threshold` and `alert_rules`.
@@ -33,3 +35,4 @@ Take a look at `designs/` to see how the finished website should look. Focus on 
 - `yarn start`
 - Open `src/App.tsx`
 - Make the form functionality match the designs
+- Make sure the "submit" button works

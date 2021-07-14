@@ -1,12 +1,11 @@
 import React from "react";
-import { useListSelectOptions } from "./hooks";
 import { Option } from "./components";
 import { OptionValue } from "../../types";
 
 type Props = {
   options: OptionValue[];
   selectedOptions: OptionValue[];
-  setSelectedOptions: (selectedOptions: OptionValue[]) => void;
+  setSelectedOptions: React.Dispatch<React.SetStateAction<OptionValue[]>>;
 };
 
 const OptionsList: React.FC<Props> = ({

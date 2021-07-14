@@ -1,15 +1,5 @@
 import { useMemo } from "react";
-import { AlertRuleType, AlertsResource, OptionValue } from "../../types";
-
-let lastId = 0;
-
-export const useAlert = (): AlertsResource => {
-  return {
-    id: lastId++,
-    alert_rules: [],
-    transaction_amount_threshold: 100,
-  };
-};
+import { AlertRuleType, OptionValue } from "../../types";
 
 export const useListSelectOptions = (): OptionValue[] =>
   useMemo(
