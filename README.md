@@ -2,6 +2,8 @@
 
 Welcome to your interview! The following is supposed to give a condensed experience of a real Ramp project.
 
+Let's start by cloning the repo and running `yarn install`
+
 ## Some Ground Rules
 
 - You will have ~40 minutes to work on this project
