@@ -28,6 +28,13 @@ So for example, an alert could be created that sends an email if someone in the 
 
 Take a look at `designs/` to see how the finished website should look. Focus on functionality first!
 
+## Acceptance Criteria
+
+- [ ] Minimum Transaction Amount input is Editable
+- [ ] Options are toggleable
+- [ ] Toggled on Options are grouped and listed 
+- [ ] On submit, an alert with VALID rules appears
+
 ## Let's Do This
 
 - clone the repo
