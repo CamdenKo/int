@@ -4,7 +4,7 @@ import "./App.css";
 import { OptionValue } from "./types";
 
 import { OptionsList, SelectedOptionsList } from "./components";
-import { submitData } from "./utils";
+import { submitData } from "./utils-DO-NOT-EDIT";
 import { useListSelectOptions } from "./components/OptionsList/hooks";
 
 function App() {
@@ -16,12 +16,13 @@ function App() {
   return (
     <div className="App">
       <h1>Ramp</h1>
-      <h2>alerts</h2>
+      <h2>Alerts</h2>
       <div>
         <p>Minimum Transaction Amount:</p>
         $
         <input
           value={minimumTransactionAmount}
+          type="number"
           onChange={() => {
             // TODO
           }}
@@ -49,7 +50,7 @@ function App() {
           });
         }}
       >
-        submit
+        Submit
       </button>
     </div>
   );

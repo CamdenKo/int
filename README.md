@@ -12,7 +12,6 @@ Welcome to your interview! The following is supposed to give a condensed experie
 ## Things to keep in mind
 
 - Budget your time well
-- Remember what's important to signal during an interview
-- Asking questions about syntax won't affect your review. Wasting 10 minutes trying to write a TypeScript function will
+- Don't focus on syntax (ask questions)
 
 When you're ready open [the tech spec](./SPEC.md)
